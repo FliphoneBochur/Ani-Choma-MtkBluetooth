@@ -1195,49 +1195,6 @@
     return-void
 .end method
 
-.method private isVcfType(Ljava/lang/String;)Z
-    .locals 3
-
-    const/4 v0, 0x0
-
-    if-nez p1, :cond_0
-
-    return v0
-
-    :cond_0
-    const-string v1, "text/x-vcard"
-
-    invoke-virtual {p1, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    const-string v1, "text/vcard"
-
-    invoke-virtual {p1, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_2
-
-    const-string v1, "application/vcard"
-
-    invoke-virtual {p1, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-.end method
-
 .method private showToast(Ljava/lang/String;)V
     .locals 1
 
@@ -1255,7 +1212,7 @@
 
 # virtual methods
 .method public onCreate(Landroid/os/Bundle;)V
-    .locals 7
+    .locals 6
 
     .line 77
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
@@ -1516,21 +1473,6 @@
 
     if-eqz p1, :cond_7
 
-    invoke-direct {p0, p1}, Lcom/android/bluetooth/opp/BluetoothOppLauncherActivity;->isVcfType(Ljava/lang/String;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_6a
-
-    const-string p1, "Only VCF file transfers allowed."
-
-    invoke-direct {p0, p1}, Lcom/android/bluetooth/opp/BluetoothOppLauncherActivity;->showToast(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lcom/android/bluetooth/opp/BluetoothOppLauncherActivity;->finish()V
-
-    return-void
-
-    :cond_6a
     .line 119
     sget-boolean v0, Lcom/android/bluetooth/opp/BluetoothOppLauncherActivity;->V:Z
 
@@ -1724,21 +1666,6 @@
 
     move-result v3
 
-    invoke-direct {p0, v1}, Lcom/android/bluetooth/opp/BluetoothOppLauncherActivity;->isVcfType(Ljava/lang/String;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_c_pre
-
-    const-string p1, "Only VCF file transfers allowed."
-
-    invoke-direct {p0, p1}, Lcom/android/bluetooth/opp/BluetoothOppLauncherActivity;->showToast(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lcom/android/bluetooth/opp/BluetoothOppLauncherActivity;->finish()V
-
-    return-void
-
-    :cond_c_pre
     invoke-static {}, Lcom/android/bluetooth/opp/BluetoothOppUtility;->getTotalTaskCount()I
 
     move-result v4

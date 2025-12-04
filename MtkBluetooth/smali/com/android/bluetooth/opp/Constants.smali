@@ -110,32 +110,55 @@
 
 
 # direct methods
-
 .method static constructor <clinit>()V
-    .locals 4
+    .locals 21
 
     .line 179
-    const/4 v0, 0x3
+    const-string v0, "image/*"
 
-    new-array v0, v0, [Ljava/lang/String;
+    const-string v1, "video/*"
 
-    const/4 v1, 0x0
+    const-string v2, "audio/*"
 
-    const-string v2, "text/x-vcard"
+    const-string v3, "text/x-vcard"
 
-    aput-object v2, v0, v1
+    const-string v4, "text/x-vcalendar"
 
-    const/4 v1, 0x1
+    const-string v5, "text/calendar"
 
-    const-string v2, "text/vcard"
+    const-string v6, "text/plain"
 
-    aput-object v2, v0, v1
+    const-string v7, "text/html"
 
-    const/4 v1, 0x2
+    const-string v8, "text/xml"
 
-    const-string v2, "application/vcard"
+    const-string v9, "application/zip"
 
-    aput-object v2, v0, v1
+    const-string v10, "application/vnd.ms-excel"
+
+    const-string v11, "application/msword"
+
+    const-string v12, "application/vnd.ms-powerpoint"
+
+    const-string v13, "application/pdf"
+
+    const-string v14, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+
+    const-string v15, "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+
+    const-string v16, "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+
+    const-string v17, "application/x-hwp"
+
+    const-string v18, "application/vnd.android.package-archive"
+
+    const-string v19, "application/x-flac"
+
+    const-string v20, "application/epub+zip"
+
+    filled-new-array/range {v0 .. v20}, [Ljava/lang/String;
+
+    move-result-object v0
 
     sput-object v0, Lcom/android/bluetooth/opp/Constants;->ACCEPTABLE_SHARE_INBOUND_TYPES:[Ljava/lang/String;
 
