@@ -1212,7 +1212,7 @@
 
 # virtual methods
 .method public onCreate(Landroid/os/Bundle;)V
-    .locals 6
+    .locals 7
 
     .line 77
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
@@ -1501,6 +1501,38 @@
 
     .line 125
     :cond_6
+    invoke-virtual {v1}, Landroid/net/Uri;->toString()Ljava/lang/String;
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+    move-result-object v5
+
+    const-string v6, ".vcf"
+
+    invoke-virtual {v5, v6}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+    move-result v5
+
+    if-nez v5, :cond_6_allow
+
+    invoke-virtual {p1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+    move-result-object v5
+
+    const-string v6, "vcard"
+
+    invoke-virtual {v5, v6}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    move-result v5
+
+    if-nez v5, :cond_6_allow
+
+    const-string p1, "This device can only share contacts (.vcf)."
+
+    invoke-direct {p0, p1}, Lcom/android/bluetooth/opp/BluetoothOppLauncherActivity;->showToast(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lcom/android/bluetooth/opp/BluetoothOppLauncherActivity;->finish()V
+
+    return-void
+
+    :cond_6_allow
     new-instance v0, Ljava/lang/Thread;
 
     new-instance v2, Lcom/android/bluetooth/opp/BluetoothOppLauncherActivity$1;
@@ -1520,6 +1552,26 @@
     if-eqz v0, :cond_a
 
     if-eqz p1, :cond_a
+
+    invoke-virtual {p1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v5
+
+    const-string v6, "vcard"
+
+    invoke-virtual {v5, v6}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v5
+
+    if-nez v5, :cond_8
+
+    const-string p1, "This device can only share contacts (.vcf)."
+
+    invoke-direct {p0, p1}, Lcom/android/bluetooth/opp/BluetoothOppLauncherActivity;->showToast(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lcom/android/bluetooth/opp/BluetoothOppLauncherActivity;->finish()V
+
+    return-void
 
     .line 136
     sget-boolean v1, Lcom/android/bluetooth/opp/BluetoothOppLauncherActivity;->V:Z
@@ -1631,6 +1683,26 @@
     if-eqz v1, :cond_f
 
     if-eqz v0, :cond_f
+
+    invoke-virtual {v1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v5
+
+    const-string v6, "vcard"
+
+    invoke-virtual {v5, v6}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v5
+
+    if-nez v5, :cond_c
+
+    const-string p1, "This device can only share contacts (.vcf)."
+
+    invoke-direct {p0, p1}, Lcom/android/bluetooth/opp/BluetoothOppLauncherActivity;->showToast(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lcom/android/bluetooth/opp/BluetoothOppLauncherActivity;->finish()V
+
+    return-void
 
     .line 168
     sget-boolean v3, Lcom/android/bluetooth/opp/BluetoothOppLauncherActivity;->V:Z
