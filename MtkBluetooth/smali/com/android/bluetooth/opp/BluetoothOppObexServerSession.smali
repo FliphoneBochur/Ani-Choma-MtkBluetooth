@@ -1463,6 +1463,42 @@
 
     move-result-object v5
 
+    invoke-virtual {v7}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+    move-result-object v10
+
+    const-string v11, ".vcf"
+
+    invoke-virtual {v10, v11}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+
+    move-result v10
+
+    if-nez v10, :cond_vcf_ok
+
+    const-string v10, "vcard"
+
+    invoke-virtual {v5, v10}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v10
+
+    if-nez v10, :cond_vcf_ok
+
+    iget-object v10, v1, Lcom/android/bluetooth/opp/BluetoothOppObexServerSession;->mContext:Landroid/content/Context;
+
+    const-string v11, "Receive Blocked\nThis Kosher Phone can only receive contacts."
+
+    const/4 v12, 0x1
+
+    invoke-static {v10, v11, v12}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+
+    move-result-object v10
+
+    invoke-virtual {v10}, Landroid/widget/Toast;->show()V
+
+    goto :goto_a
+
+    :cond_vcf_ok
+
     .line 269
     if-eqz v5, :cond_1e
 
