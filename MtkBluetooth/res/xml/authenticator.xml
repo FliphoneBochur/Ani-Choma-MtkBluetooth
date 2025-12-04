@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<account-authenticator android:icon="@mipmap/bt_share" android:accountType="@string/pbap_account_type" android:smallIcon="@mipmap/bt_share"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

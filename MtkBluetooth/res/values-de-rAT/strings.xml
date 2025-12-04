@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bluetooth_busy">Bluetooth ist ausgelastet; bitte später erneut versuchen</string>
+    <string name="empty_sub_name">SIM-Steckplatz %1$d</string>
+    <string name="notify_need_on_BT_before_retry">Bluetooth ist abgeschaltet. Bitte aktivieren Sie Bluetooth vor dem erneuten Senden</string>
+    <string name="panu_disconnect_while_wifi_connected">Bluetooth-Anbindung getrennt</string>
+    <string name="panu_no_need_connect">Wenn Sie mit Wi-Fi verbunden sind, ist eine Bluetooth-Anbindung nicht möglich.</string>
+    <string name="sim_selected_dialog_title">SIM wählen</string>
+    <string name="suggested">Vorgeschlagen</string>
+    <string name="too_much_file_sent">Maximal %1$s Dateien gleichzeitig</string>
+</resources>

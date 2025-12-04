@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:padding="4.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBox android:id="@id/blescan_checkbox" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Refresh status every 1s" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/blescan_panel" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <Button android:id="@id/blescan_disable" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="Disable" android:layout_weight="1.0" />
+        <Button android:enabled="false" android:id="@id/blescan_text" android:background="#22f51f8b" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="Ble Scan" android:layout_weight="1.0" />
+        <Button android:id="@id/blescan_enable" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="Enable" android:layout_weight="1.0" />
+    </LinearLayout>
+    <TextView android:orientation="horizontal" android:id="@id/text" android:paddingTop="4.0dip" android:paddingBottom="4.0dip" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</LinearLayout>

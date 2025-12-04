@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<adaptive-icon
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <foreground>
+        <inset android:drawable="@android:drawable/ic_audio_ring_notif_mute" android:insetLeft="25.0%" android:insetRight="25.0%" android:insetTop="25.0%" android:insetBottom="25.0%" />
+    </foreground>
+    <background>
+        <color android:color="@android:color/white" />
+    </background>
+</adaptive-icon>
